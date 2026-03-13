@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulasi Tes CPNS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        .question {
+            margin-bottom: 25px
+        }
+
+        .options label {
+            display: block;
+            margin: 6px 0;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer
+        }
+
+        button {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer
+        }
+
+        button:hover {
+            background: #1b5e20
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 18px
+        }
+
+        .answerkey {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f1f8e9;
+            border-radius: 8px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simulasi Tes CPNS</h1>
+        <p>Pilih jawaban yang menurut Anda paling benar. Kunci jawaban muncul setelah Anda menekan tombol selesai.</p>
+
+        <form id="quizForm">
+
+            <div class="question">
+                <p><b>1. Nilai dasar ASN yang menekankan pelayanan publik yang jujur, bertanggung jawab, dan disiplin
+                        dikenal sebagai...</b></p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> A. Nasionalisme</label>
+                    <label><input type="radio" name="q1" value="B"> B. Akuntabilitas</label>
+                    <label><input type="radio" name="q1" value="C"> C. Komitmen Mutu</label>
+                    <label><input type="radio" name="q1" value="D"> D. Anti Korupsi</label>
+                    <label><input type="radio" name="q1" value="E"> E. Profesionalisme</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p><b>2. Jika semua pegawai disiplin maka pekerjaan selesai tepat waktu. Sebagian pegawai tidak
+                        menyelesaikan pekerjaan tepat waktu. Kesimpulan yang tepat adalah...</b></p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> A. Semua pegawai tidak disiplin</label>
+                    <label><input type="radio" name="q2" value="B"> B. Sebagian pegawai tidak disiplin</label>
+                    <label><input type="radio" name="q2" value="C"> C. Semua pegawai disiplin</label>
+                    <label><input type="radio" name="q2" value="D"> D. Sebagian pegawai disiplin</label>
+                    <label><input type="radio" name="q2" value="E"> E. Tidak dapat disimpulkan</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p><b>3. 4, 6, 9, 13, 18, ...</b></p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> A. 22</label>
+                    <label><input type="radio" name="q3" value="B"> B. 23</label>
+                    <label><input type="radio" name="q3" value="C"> C. 24</label>
+                    <label><input type="radio" name="q3" value="D"> D. 25</label>
+                    <label><input type="radio" name="q3" value="E"> E. 26</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p><b>4. Sikap yang paling mencerminkan integritas ASN adalah...</b></p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> A. Menyelesaikan pekerjaan jika diperintah
+                        atasan</label>
+                    <label><input type="radio" name="q4" value="B"> B. Menolak gratifikasi walaupun tidak diketahui
+                        orang lain</label>
+                    <label><input type="radio" name="q4" value="C"> C. Mengutamakan kepentingan kelompok</label>
+                    <label><input type="radio" name="q4" value="D"> D. Menunggu arahan sebelum bekerja</label>
+                    <label><input type="radio" name="q4" value="E"> E. Mengikuti keputusan mayoritas</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p><b>5. Jika 3 orang menyelesaikan pekerjaan dalam 6 hari, maka 6 orang dengan kemampuan sama akan
+                        menyelesaikan pekerjaan dalam...</b></p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> A. 2 hari</label>
+                    <label><input type="radio" name="q5" value="B"> B. 3 hari</label>
+                    <label><input type="radio" name="q5" value="C"> C. 4 hari</label>
+                    <label><input type="radio" name="q5" value="D"> D. 5 hari</label>
+                    <label><input type="radio" name="q5" value="E"> E. 6 hari</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="finishQuiz()">Selesai</button>
+
+        </form>
+
+        <div id="result"></div>
+
+        <div id="answerKey" class="answerkey" style="display:none">
+            <h3>Kunci Jawaban</h3>
+            <p>1. B</p>
+            <p>2. B</p>
+            <p>3. C</p>
+            <p>4. B</p>
+            <p>5. B</p>
+        </div>
+
+    </div>
+
+    <script>
+        function finishQuiz() {
+            const answers = { q1: 'B', q2: 'B', q3: 'C', q4: 'B', q5: 'B' }
+            let score = 0
+            for (let q in answers) {
+                let selected = document.querySelector('input[name="' + q + '"]:checked')
+                if (selected && selected.value === answers[q]) score++
+            }
+
+            document.getElementById('result').innerHTML = "Skor Anda: " + score + " / 5"
+            document.getElementById('answerKey').style.display = 'block'
+        }
+    </script>
+
+</body>
+
+</html>
